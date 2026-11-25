@@ -4,6 +4,8 @@
 
 Eine Kaffeetasse in der Menüleiste, die den Mac wach hält – wie `caffeinate`, nur per Klick.
 
+<p align="center"><img src="docs/screenshot.png" width="352" alt="CoffeeBar-Menü in der Menüleiste"></p>
+
 - **Linksklick** auf die Tasse: an/aus (gefüllte Tasse = wach)
 - **Rechtsklick** (oder ⌥-/⌃-Klick): Menü mit allen Optionen
 
