@@ -1,6 +1,6 @@
 <p align="center"><img src="Resources/AppIcon.png" width="128" alt="App icon"></p>
 
-# KaffeeBar
+# CoffeeBar
 
 Eine Kaffeetasse in der Menüleiste, die den Mac wach hält – wie `caffeinate`, nur per Klick.
 
@@ -18,7 +18,7 @@ Eine Kaffeetasse in der Menüleiste, die den Mac wach hält – wie `caffeinate`
 | **Linksklick schaltet ein für** | Standarddauer für den Linksklick. |
 | **Bei Anmeldung starten** | Über `SMAppService`. |
 
-Technisch nutzt die App IOKit-Power-Assertions (`PreventUserIdleSystemSleep`, optional `PreventUserIdleDisplaySleep`) – dasselbe wie `caffeinate`, ohne Kindprozess. Prüfen mit `pmset -g assertions | grep KaffeeBar`.
+Technisch nutzt die App IOKit-Power-Assertions (`PreventUserIdleSystemSleep`, optional `PreventUserIdleDisplaySleep`) – dasselbe wie `caffeinate`, ohne Kindprozess. Prüfen mit `pmset -g assertions | grep CoffeeBar`.
 
 **Hinweis:** Zuklappen des MacBooks schickt es trotzdem schlafen (außer mit externem Bildschirm am Netzteil). Das kann auch `caffeinate` nicht verhindern.
 
@@ -35,6 +35,6 @@ Icon neu erzeugen: `swift tools/make-icon.swift Resources/AppIcon.png`
 ## Deinstallieren
 
 ```bash
-pkill -x KaffeeBar; rm -rf ~/Applications/KaffeeBar.app
-defaults delete de.maxgerbeth.KaffeeBar
+pkill -x CoffeeBar; rm -rf ~/Applications/CoffeeBar.app
+defaults delete de.maxgerbeth.CoffeeBar
 ```

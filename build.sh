@@ -1,14 +1,14 @@
 #!/bin/bash
-# Baut KaffeeBar.app und installiert sie nach ~/Applications
+# Baut CoffeeBar.app und installiert sie nach ~/Applications
 set -euo pipefail
 cd "$(dirname "$0")"
 
-APP="KaffeeBar.app"
+APP="CoffeeBar.app"
 swift build -c release
 
 rm -rf "build/$APP"
 mkdir -p "build/$APP/Contents/MacOS"
-cp .build/release/KaffeeBar "build/$APP/Contents/MacOS/"
+cp .build/release/CoffeeBar "build/$APP/Contents/MacOS/"
 cp Info.plist "build/$APP/Contents/"
 
 # App-Icon: Resources/AppIcon.png (1024px) → AppIcon.icns
@@ -21,7 +21,7 @@ iconutil -c icns build/AppIcon.iconset -o "build/$APP/Contents/Resources/AppIcon
 codesign --force --sign - "build/$APP"
 
 mkdir -p ~/Applications
-pkill -x KaffeeBar 2>/dev/null || true
+pkill -x CoffeeBar 2>/dev/null || true
 rm -rf ~/Applications/"$APP"
 cp -R "build/$APP" ~/Applications/
 open ~/Applications/"$APP"

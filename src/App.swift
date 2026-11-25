@@ -93,7 +93,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         if awake && since == nil { since = Date() }
         if !awake { since = nil }
         assertion.set(active: awake, display: keepDisplay,
-                      reason: claudeKeepsAwake && !manualOn ? "KaffeeBar: Claude Code läuft" : "KaffeeBar")
+                      reason: claudeKeepsAwake && !manualOn ? "CoffeeBar: Claude Code läuft" : "CoffeeBar")
         updateButton()
     }
 
@@ -217,7 +217,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
                            #selector(toggleLogin)))
 
         menu.addItem(.separator())
-        let quit = NSMenuItem(title: "KaffeeBar beenden", action: #selector(NSApplication.terminate(_:)),
+        let quit = NSMenuItem(title: "CoffeeBar beenden", action: #selector(NSApplication.terminate(_:)),
                               keyEquivalent: "q")
         menu.addItem(quit)
     }
