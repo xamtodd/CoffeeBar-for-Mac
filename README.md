@@ -4,10 +4,10 @@
 
 Eine Kaffeetasse in der Menüleiste, die den Mac wach hält – wie `caffeinate`, nur per Klick.
 
-<p align="center"><img src="docs/screenshot.png" width="352" alt="CoffeeBar-Menü in der Menüleiste"></p>
+![CoffeeBar in der macOS-Menüleiste](docs/screenshot.png)
 
 - **Linksklick** auf die Tasse: an/aus (gefüllte Tasse = wach)
-- **Rechtsklick** (oder ⌥-/⌃-Klick): Menü mit allen Optionen
+- **Rechtsklick** (oder ⌥-/⌃-Klick): Panel mit Restzeit-Balken, Schnellwahl (15m … ∞) und allen Optionen
 
 ## Optionen
 
@@ -17,8 +17,10 @@ Eine Kaffeetasse in der Menüleiste, die den Mac wach hält – wie `caffeinate`
 | **Solange Claude Code läuft** | Standardmäßig an. Der Mac bleibt automatisch wach, solange irgendwo ein `claude`-Prozess läuft, und darf wieder schlafen, sobald alle beendet sind. Ersetzt das manuelle `caffeinate`. |
 | **Bildschirm anlassen** | Zusätzlich den Bildschirm wach halten (wie `caffeinate -d`). Standard: aus, der Bildschirm darf ausgehen, der Mac arbeitet weiter. |
 | **Bei Akku unter 20 % ausschalten** | Standard: an. |
-| **Linksklick schaltet ein für** | Standarddauer für den Linksklick. |
+| **Linksklick auf die Tasse** | Standarddauer für den Linksklick. |
 | **Bei Anmeldung starten** | Über `SMAppService`. |
+
+Läuft ein Timer, zeigt das Panel einen Balken mit der Restzeit.
 
 Technisch nutzt die App IOKit-Power-Assertions (`PreventUserIdleSystemSleep`, optional `PreventUserIdleDisplaySleep`) – dasselbe wie `caffeinate`, ohne Kindprozess. Prüfen mit `pmset -g assertions | grep CoffeeBar`.
 
