@@ -13,7 +13,7 @@ enum Main {
     }
 }
 
-/// Linksklick auf die Tasse: an/aus. Rechtsklick (oder ⌥/⌃-Klick): Panel mit allen Optionen.
+/// Linksklick auf die Tasse: Panel. Rechtsklick (oder ⌥/⌃-Klick): direkt an/aus.
 @MainActor
 final class AppDelegate: NSObject, NSApplicationDelegate {
     private let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
@@ -45,12 +45,12 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 
     @objc private func statusClicked() {
         let event = NSApp.currentEvent
-        let wantsPanel = event?.type == .rightMouseUp
+        let quickToggle = event?.type == .rightMouseUp
             || event?.modifierFlags.contains(.option) == true
             || event?.modifierFlags.contains(.control) == true
         if popover.isShown {
             popover.performClose(nil)
-        } else if wantsPanel, let button = statusItem.button {
+        } else if !quickToggle, let button = statusItem.button {
             model.refreshLogin()
             popover.show(relativeTo: button.bounds, of: button, preferredEdge: .minY)
             popover.contentViewController?.view.window?.makeKey()

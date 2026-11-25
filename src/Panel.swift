@@ -118,7 +118,7 @@ struct CoffeePanel: View {
             Toggle("Bei Anmeldung starten", isOn: Binding(get: { model.launchAtLogin },
                                                           set: { model.setLaunchAtLogin($0) }))
             HStack {
-                Text("Linksklick auf die Tasse")
+                Text("Dauer bei Rechtsklick").lineLimit(1)
                 Spacer()
                 Picker("", selection: $model.defaultMinutes) {
                     ForEach(CoffeeModel.durations, id: \.minutes) { d in Text(d.long).tag(d.minutes) }
@@ -132,7 +132,7 @@ struct CoffeePanel: View {
 
     private var footer: some View {
         HStack {
-            Text("Rechtsklick öffnet dieses Panel")
+            Text("Rechtsklick auf die Tasse: an/aus")
                 .foregroundStyle(.secondary)
             Spacer()
             Button("Beenden") { NSApp.terminate(nil) }
