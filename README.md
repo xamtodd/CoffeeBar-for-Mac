@@ -1,6 +1,6 @@
 <p align="center"><img src="Resources/AppIcon.png" width="128" alt="App icon"></p>
 
-# CoffeeBar
+# CoffeeBar for macOS
 
 Eine Kaffeetasse in der Menüleiste, die den Mac wach hält – wie `caffeinate`, nur per Klick.
 
